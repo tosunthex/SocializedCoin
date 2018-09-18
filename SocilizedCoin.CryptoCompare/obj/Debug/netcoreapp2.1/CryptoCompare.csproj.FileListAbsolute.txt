@@ -1,0 +1,11 @@
+/home/levent/RiderProjects/Socializedcoin/CryptoCompare/bin/Debug/netcoreapp2.1/CryptoCompare.deps.json
+/home/levent/RiderProjects/Socializedcoin/CryptoCompare/bin/Debug/netcoreapp2.1/CryptoCompare.runtimeconfig.json
+/home/levent/RiderProjects/Socializedcoin/CryptoCompare/bin/Debug/netcoreapp2.1/CryptoCompare.runtimeconfig.dev.json
+/home/levent/RiderProjects/Socializedcoin/CryptoCompare/bin/Debug/netcoreapp2.1/CryptoCompare.dll
+/home/levent/RiderProjects/Socializedcoin/CryptoCompare/bin/Debug/netcoreapp2.1/CryptoCompare.pdb
+/home/levent/RiderProjects/Socializedcoin/CryptoCompare/obj/Debug/netcoreapp2.1/CryptoCompare.csprojAssemblyReference.cache
+/home/levent/RiderProjects/Socializedcoin/CryptoCompare/obj/Debug/netcoreapp2.1/CryptoCompare.csproj.CoreCompileInputs.cache
+/home/levent/RiderProjects/Socializedcoin/CryptoCompare/obj/Debug/netcoreapp2.1/CryptoCompare.AssemblyInfoInputs.cache
+/home/levent/RiderProjects/Socializedcoin/CryptoCompare/obj/Debug/netcoreapp2.1/CryptoCompare.AssemblyInfo.cs
+/home/levent/RiderProjects/Socializedcoin/CryptoCompare/obj/Debug/netcoreapp2.1/CryptoCompare.dll
+/home/levent/RiderProjects/Socializedcoin/CryptoCompare/obj/Debug/netcoreapp2.1/CryptoCompare.pdb

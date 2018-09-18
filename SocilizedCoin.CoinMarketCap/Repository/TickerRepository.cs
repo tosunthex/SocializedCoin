@@ -2,21 +2,21 @@
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using Socilizedcoin.CoinMarketCap.Data;
-using Socilizedcoin.CoinMarketCap.Model;
+using SocilizedCoin.CoinMarketCap.Data;
+using SocilizedCoin.CoinMarketCap.Model;
 
-namespace Socilizedcoin.CoinMarketCap.Repository
+namespace SocilizedCoin.CoinMarketCap.Repository
 {
     public class TickerRepository:ITickerRepository
     {
-        private readonly TickerContext _context = null;
+        private readonly CoinMarketCapContext _context = null;
 
         public TickerRepository()
         {
-            _context = new TickerContext();
+            _context = new CoinMarketCapContext();
         }
         
-        public async Task<MongoTicker> GetTicker()
+        public async Task<TickerWithSocialData> GetTicker()
         {
             try
             {
@@ -29,7 +29,7 @@ namespace Socilizedcoin.CoinMarketCap.Repository
             }
         }
 
-        public async Task AddTicker(MongoTicker ticker)
+        public async Task AddTicker(TickerWithSocialData ticker)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace Socilizedcoin.CoinMarketCap.Repository
         {
             try
             {
-                DeleteResult actionResult =  await _context.Ticker().DeleteOneAsync(Builders<MongoTicker>.Filter.Eq("Id",id));
+                DeleteResult actionResult =  await _context.Ticker().DeleteOneAsync(Builders<TickerWithSocialData>.Filter.Eq("Id",id));
                 return actionResult.IsAcknowledged 
                        && actionResult.DeletedCount > 0;
             }

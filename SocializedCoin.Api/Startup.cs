@@ -1,13 +1,17 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using SocilizedCoin.CoinMarketCap.Repository;
-using SocilizedCoin.CoinMarketCap.Services;
-using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
-namespace SocilizedCoin.CoinMarketCap
+namespace SocializedCoin.Api
 {
     public class Startup
     {
@@ -21,9 +25,7 @@ namespace SocilizedCoin.CoinMarketCap
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IHostedService, TickerService>();
-            services.AddSingleton<ITickerRepository, TickerRepository>();
-            services.AddSingleton<ICoinlistRepository, CoinlistRepository>();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,8 +35,13 @@ namespace SocilizedCoin.CoinMarketCap
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts();
+            }
 
+            app.UseHttpsRedirection();
+            app.UseMvc();
         }
-    
     }
 }

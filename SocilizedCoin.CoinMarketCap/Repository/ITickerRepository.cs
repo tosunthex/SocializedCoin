@@ -1,13 +1,13 @@
 ﻿using System.Threading.Tasks;
 using MongoDB.Bson;
-using Socilizedcoin.CoinMarketCap.Model;
+using SocilizedCoin.CoinMarketCap.Model;
 
-namespace Socilizedcoin.CoinMarketCap.Repository
+namespace SocilizedCoin.CoinMarketCap.Repository
 {
     public interface ITickerRepository
     {
-        Task<MongoTicker> GetTicker();
-        Task AddTicker(MongoTicker ticker);
+        Task<TickerWithSocialData> GetTicker();
+        Task AddTicker(TickerWithSocialData ticker);
         Task<bool> DeleteTicker(ObjectId id);
     }
 }

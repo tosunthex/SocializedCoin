@@ -5,6 +5,7 @@
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="CoinMarketCapApiV2Client" Version="1.1.0"/>
+        <PackageReference Include="CryptoCompareAsyncApi" Version="1.2.2"/>
         <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.2"/>
         <PackageReference Include="MongoDB.Driver" Version="2.7.0"/>
         <PackageReference Include="Newtonsoft.Json" Version="11.0.2"/>
