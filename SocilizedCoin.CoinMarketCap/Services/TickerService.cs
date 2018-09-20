@@ -33,10 +33,11 @@ namespace SocilizedCoin.CoinMarketCap.Services
                 var tickersData = await _coinMarketCapClient.Ticker.GetTickers();
                 foreach (var ticker in tickersData.Data.Values)
                 {
-                    var cryptoId = await _coinlistRepository.GetCoinlistDataBySymbol(ticker.Symbol) ??
+                    var cryptoDetail = await _coinlistRepository.GetCoinlistDataBySymbol(ticker.Symbol) ??
                                    await _coinlistRepository.GetCoinlistDataByCoinName(ticker.Name) ;
 
-                    var socialstatdata = cryptoId != null ? await _cryptoCompareClient.OtherClient.GetSocialStat(cryptoId.Id) : null;
+                    var socialstatdata = cryptoDetail != null ? await _cryptoCompareClient.OtherClient.GetSocialStat(cryptoDetail.Id) : null;
+                    
                     var mongoTicker = new TickerWithSocialData
                     {
                         Id = ticker.Id,
@@ -44,6 +45,8 @@ namespace SocilizedCoin.CoinMarketCap.Services
                         Symbol = ticker.Symbol,
                         WebsiteSlug = ticker.WebsiteSlug,
                         Rank = ticker.Rank,
+                        Url = cryptoDetail?.Url,
+                        ImageUrl = cryptoDetail?.ImageUrl,
                         CirculatingSupply = ticker.CirculatingSupply,
                         TotalSupply = ticker.TotalSupply,
                         MaxSupply = ticker.MaxSupply,

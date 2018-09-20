@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
-      "CryptoCompareAsyncApi/1.2.2": {
+      "CryptoCompareAsyncApi/1.2.3": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "11.0.2"
@@ -4784,12 +4784,12 @@
     }
   },
   "libraries": {
-    "CryptoCompareAsyncApi/1.2.2": {
-      "sha512": "HkxbwBLBEQaFZg5sWh9W6GViyJWtEWgwF1Vc9dSi01sw4PitXT6WSkhBwR+TPFsahGIexx5gy7esRFnqf8CU/Q==",
+    "CryptoCompareAsyncApi/1.2.3": {
+      "sha512": "nl6KdzGPY55sUecqMu8sNsU/PaM6akyN0/SkMmJA5k0HKLYuqz/iV4T29Q5HnmL2H6FuIvfDAb8vzNqYgkfYlg==",
       "type": "package",
-      "path": "cryptocompareasyncapi/1.2.2",
+      "path": "cryptocompareasyncapi/1.2.3",
       "files": [
-        "cryptocompareasyncapi.1.2.2.nupkg.sha512",
+        "cryptocompareasyncapi.1.2.3.nupkg.sha512",
         "cryptocompareasyncapi.nuspec",
         "lib/net45/CryptoCompare-Api.dll",
         "lib/net461/CryptoCompare-Api.dll",
@@ -12605,7 +12605,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "CryptoCompareAsyncApi >= 1.2.2",
+      "CryptoCompareAsyncApi >= 1.2.3",
       "Microsoft.AspNetCore.App >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
       "MongoDB.Driver >= 2.7.0"
@@ -12652,7 +12652,7 @@
         "dependencies": {
           "CryptoCompareAsyncApi": {
             "target": "Package",
-            "version": "[1.2.2, )"
+            "version": "[1.2.3, )"
           },
           "Microsoft.AspNetCore.App": {
             "target": "Package",

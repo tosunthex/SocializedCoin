@@ -6,7 +6,7 @@ using CryptoCompare_Api.Models.Responses.Other;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace SocilizedCoin.CoinMarketCap.Model
+namespace SocializedCoin.Api.Model
 {
     public class TickerWithSocialData
     {
@@ -23,10 +23,6 @@ namespace SocilizedCoin.CoinMarketCap.Model
         public string WebsiteSlug { get; set; }
 
         public long? Rank { get; set; }
-        
-        public string Url { get; set; }
-        
-        public string ImageUrl { get; set; }
 
         public long? CirculatingSupply { get; set; }
 
