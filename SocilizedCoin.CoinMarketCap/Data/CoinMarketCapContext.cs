@@ -17,6 +17,7 @@ namespace SocilizedCoin.CoinMarketCap.Data
             }
         }
 
-        public IMongoCollection<TickerWithSocialData> Ticker() => _database.GetCollection<TickerWithSocialData>("TickerWithSocialData");
+        public IMongoCollection<LatestCryptoCurrencyData> LastestCrpytoCurrencyData() => _database.GetCollection<LatestCryptoCurrencyData>("LatestCryptoCurrencyData");
+        public IMongoCollection<CryptoCurrencyGeneralData> CryptoCurrencyGeneralData() => _database.GetCollection<CryptoCurrencyGeneralData>("CryptoCurrencyGeneralData");
     }
 }

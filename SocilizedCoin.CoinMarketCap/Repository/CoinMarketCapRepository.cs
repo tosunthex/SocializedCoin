@@ -7,20 +7,20 @@ using SocilizedCoin.CoinMarketCap.Model;
 
 namespace SocilizedCoin.CoinMarketCap.Repository
 {
-    public class TickerRepository:ITickerRepository
+    public class CoinMarketCapRepository:ICoinMarketCapRepository
     {
         private readonly CoinMarketCapContext _context = null;
 
-        public TickerRepository()
+        public CoinMarketCapRepository()
         {
             _context = new CoinMarketCapContext();
         }
         
-        public async Task<TickerWithSocialData> GetTicker()
+        public async Task<LatestCryptoCurrencyData> GetTicker()
         {
             try
             {
-                return await _context.Ticker().Find(_ => true).FirstAsync();
+                return await _context.LastestCrpytoCurrencyData().Find(_ => true).FirstAsync();
             }
             catch (Exception e)
             {
@@ -29,11 +29,11 @@ namespace SocilizedCoin.CoinMarketCap.Repository
             }
         }
 
-        public async Task AddTicker(TickerWithSocialData ticker)
+        public async Task AddTicker(LatestCryptoCurrencyData ticker)
         {
             try
             {
-                await _context.Ticker().InsertOneAsync(ticker);
+                await _context.LastestCrpytoCurrencyData().InsertOneAsync(ticker);
             }
             catch (Exception e)
             {
@@ -46,7 +46,7 @@ namespace SocilizedCoin.CoinMarketCap.Repository
         {
             try
             {
-                DeleteResult actionResult =  await _context.Ticker().DeleteOneAsync(Builders<TickerWithSocialData>.Filter.Eq("Id",id));
+                DeleteResult actionResult =  await _context.LastestCrpytoCurrencyData().DeleteOneAsync(Builders<LatestCryptoCurrencyData>.Filter.Eq("Id",id));
                 return actionResult.IsAcknowledged 
                        && actionResult.DeletedCount > 0;
             }
@@ -55,6 +55,19 @@ namespace SocilizedCoin.CoinMarketCap.Repository
                 Console.WriteLine(e);
                 throw;
             }
+        }
+
+        public async Task AddGeneralData(CryptoCurrencyGeneralData cryptoCurrencyGeneralData)
+        {
+            try
+            {
+                await _context.CryptoCurrencyGeneralData().InsertOneAsync(cryptoCurrencyGeneralData);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;    
+            } 
         }
     }
 }
