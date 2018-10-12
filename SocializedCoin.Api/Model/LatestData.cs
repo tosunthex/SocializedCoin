@@ -3,14 +3,14 @@ using CoinMarketCapPro_API.Models.Responses.CryptoCurrency;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace SocilizedCoin.CoinMarketCap.Model
+namespace SocializedCoin.Api.Model
 {
-    public class CryptoCurrencyGeneralData
+    public class LatestData
     {
         [BsonId] 
         public ObjectId ObjectId { get; set; }
 
-        public CryptoCurrencyInfoData CryptoCurrencyInfoData { get; set; }
+        public ListingLatestData ListingLatestData { get; set; }
         public DateTime RecordDateTime { get; set; }
     }
 }

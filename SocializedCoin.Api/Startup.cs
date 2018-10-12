@@ -1,6 +1,4 @@
-﻿using CoinMarketCap.Model;
-using CoinMarketCap.Reposity;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -22,7 +20,9 @@ namespace SocializedCoin.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSingleton<ITickerWithSocialDataRepository, TickerWithSocialDataRepository>();
+            services.AddSingleton<ILatestDataReposity, LatestDataReposity>();
+            services.AddSingleton<IGeneralDataReposity, GeneralDataReposity>();
+            services.AddSingleton<ILatestWithGeneralDataReposity, LatestWithGeneralDataReposity>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

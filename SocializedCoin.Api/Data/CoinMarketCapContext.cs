@@ -13,7 +13,9 @@ namespace SocializedCoin.Api.Data
             _database = client.GetDatabase(MongoDbSettings.CoinmarketcapDatabase);
         }
 
-        public IMongoCollection<TickerWithSocialData> TickerWithSocialData() =>
-            _database.GetCollection<TickerWithSocialData>("TickerWithSocialData");
+        public IMongoCollection<LatestData> GetLatestCryptoCurrencyData() =>
+            _database.GetCollection<LatestData>("LatestCryptoCurrencyData");
+        public IMongoCollection<GeneralData> GetCryptoCurrencyGeneralData() =>
+            _database.GetCollection<GeneralData>("CryptoCurrencyGeneralData");
     }
 }
