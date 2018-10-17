@@ -22,7 +22,7 @@ namespace SocializedCoin.Api.Controllers
             return await _latestWithGeneralDataReposity.Get();
         }
 
-        [HttpGet("{id:long}")]
+        [HttpGet("{id:long:min(1)}")]
         public async Task<LatestWithGeneralData> GetById(long id)
         {
             return await _latestWithGeneralDataReposity.GetById(id);
