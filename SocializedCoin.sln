@@ -1,5 +1,4 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocializedCoin.CoinMarketCap", "SocializedCoin.CoinMarketCap\SocializedCoin.CoinMarketCap.csproj", "{734CBA07-A25D-42F9-9AC9-DF6DF77B4DBC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocializedCoin.Api", "SocializedCoin.Api\SocializedCoin.Api.csproj", "{CC1FE6E0-06DA-4FFF-85BD-750B3E223B6D}"
