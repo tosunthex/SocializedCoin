@@ -3,6 +3,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocializedCoin.CoinMarketCa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocializedCoin.Api", "SocializedCoin.Api\SocializedCoin.Api.csproj", "{CC1FE6E0-06DA-4FFF-85BD-750B3E223B6D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocializedCoin.CryptoCompare", "SocializedCoin.CryptoCompare\SocializedCoin.CryptoCompare.csproj", "{DBD67B69-4F06-481F-8535-44DE14102090}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,5 +23,9 @@ Global
 		{CC1FE6E0-06DA-4FFF-85BD-750B3E223B6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC1FE6E0-06DA-4FFF-85BD-750B3E223B6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC1FE6E0-06DA-4FFF-85BD-750B3E223B6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBD67B69-4F06-481F-8535-44DE14102090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD67B69-4F06-481F-8535-44DE14102090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD67B69-4F06-481F-8535-44DE14102090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD67B69-4F06-481F-8535-44DE14102090}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
