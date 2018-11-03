@@ -7,10 +7,10 @@ using SocializedCoin.Api.Model;
 
 namespace SocializedCoin.Api.Repository
 {
-    public class GeneralDataReposity:IGeneralDataReposity
+    public class GeneralDataRepository:IGeneralDataRepository
     {
         private readonly CoinMarketCapContext _context = null;
-        public GeneralDataReposity()
+        public GeneralDataRepository()
         {
             _context = new CoinMarketCapContext();
         }

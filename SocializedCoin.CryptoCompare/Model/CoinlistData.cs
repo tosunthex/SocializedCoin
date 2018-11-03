@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using CryptoCompare_Api.Models.Responses.Other;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace SocilizedCoin.CryptoCompare.Model
+namespace SocializedCoin.CryptoCompare.Model
 {
     public class CoinlistData
     {

@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SocilizedCoin.CryptoCompare.Repository;
-using SocilizedCoin.CryptoCompare.Services;
+using SocializedCoin.CryptoCompare.Repository;
+using SocializedCoin.CryptoCompare.Services;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
-namespace SocilizedCoin.CryptoCompare
+namespace SocializedCoin.CryptoCompare
 {
     public class Startup
     {

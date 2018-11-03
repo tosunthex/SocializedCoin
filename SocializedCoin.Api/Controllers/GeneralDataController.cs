@@ -7,32 +7,32 @@ using SocializedCoin.Api.Repository;
 
 namespace SocializedCoin.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class GeneralDataController : Controller
     {
-        private readonly IGeneralDataReposity _reposity;
-        public GeneralDataController(IGeneralDataReposity reposity)
+        private readonly IGeneralDataRepository _repository;
+        public GeneralDataController(IGeneralDataRepository repository)
         {
-            _reposity = reposity;    
+            _repository = repository;    
         }
 
         [HttpGet]
         public async Task<IEnumerable<GeneralData>> Get()
         {
-            return await _reposity.Get();
+            return await _repository.Get();
         }
 
         [HttpGet("{id:long:min(1)}")]
         public async Task<GeneralData> GetById(long id)
         {
-            return await _reposity.GetById(id);
+            return await _repository.GetById(id);
         }
 
         [HttpGet("{symbol:alpha}")]
         public async Task<GeneralData> GetBySymbol(string symbol)
         {
-            return await _reposity.GetBySymbol(symbol);
+            return await _repository.GetBySymbol(symbol);
         }
     }
 }

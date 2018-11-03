@@ -4,7 +4,7 @@ using SocializedCoin.Api.Model;
 
 namespace SocializedCoin.Api.Repository
 {
-    public interface IGeneralDataReposity
+    public interface IGeneralDataRepository
     {
         Task<IEnumerable<GeneralData>> Get();
         Task<GeneralData> GetById(long id);

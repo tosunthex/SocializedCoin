@@ -3,13 +3,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using CryptoCompare_Api.Clients;
-using CryptoCompare_Api.Models.Responses.Other;
 using Microsoft.Extensions.Hosting;
-using SocilizedCoin.CryptoCompare.Model;
-using SocilizedCoin.CryptoCompare.Repository;
-using CoinlistData = SocilizedCoin.CryptoCompare.Model.CoinlistData;
+using SocializedCoin.CryptoCompare.Model;
+using SocializedCoin.CryptoCompare.Repository;
 
-namespace SocilizedCoin.CryptoCompare.Services
+namespace SocializedCoin.CryptoCompare.Services
 {
     public class CryptoCompareService:BackgroundService
     {
@@ -34,7 +32,7 @@ namespace SocilizedCoin.CryptoCompare.Services
                     foreach (var market in marketList)
                     {
                         if (!importantMarkets.Contains(market.Key)) continue;
-                        var exchangeData = new MarketCryptoExchanges
+                        var exchangeData = new MarketExchanges
                         {
                             MarketName = market.Key,
                             CryptoExchanges = market.Value,
@@ -49,8 +47,6 @@ namespace SocilizedCoin.CryptoCompare.Services
                     throw;
                 }                
                 
-                //var socialStatdata = await _client.OtherClient.GetSocialStat(1182);
-                //await _socialstatsRepository.AddSocialStat(socialStatdata);
                 await Task.Delay(TimeSpan.FromHours(4));
             }
         }

@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Driver;
-using SocilizedCoin.CryptoCompare.Data;
-using SocilizedCoin.CryptoCompare.Model;
+using SocializedCoin.CryptoCompare.Data;
+using SocializedCoin.CryptoCompare.Model;
 
-namespace SocilizedCoin.CryptoCompare.Repository
+namespace SocializedCoin.CryptoCompare.Repository
 {
     public class ExchangeRepository:IExchangeRepository
     {
@@ -14,11 +14,11 @@ namespace SocilizedCoin.CryptoCompare.Repository
         {
             _context = new CryptoCompareContext();
         }
-        public async Task AddExchange(MarketCryptoExchanges marketCryptoExchanges)
+        public async Task AddExchange(MarketExchanges marketCryptoExchanges)
         {
             try
             {
-                await _context.MarketCryptoExchangeCollection().InsertOneAsync(marketCryptoExchanges);
+                await _context.MarketExchangesCollection().InsertOneAsync(marketCryptoExchanges);
             }
             catch (Exception e)
             {
@@ -27,11 +27,11 @@ namespace SocilizedCoin.CryptoCompare.Repository
             }
         }
 
-        public async Task<IEnumerable<MarketCryptoExchanges>> GetExchages()
+        public async Task<IEnumerable<MarketExchanges>> GetExchages()
         {
             try
             {
-                return await _context.MarketCryptoExchangeCollection().Find(_ => true).ToListAsync();
+                return await _context.MarketExchangesCollection().Find(_ => true).ToListAsync();
             }
             catch (Exception e)
             {
@@ -40,11 +40,11 @@ namespace SocilizedCoin.CryptoCompare.Repository
             }
         }
 
-        public async Task<MarketCryptoExchanges> GetExchangeByMarketName(string marketName)
+        public async Task<MarketExchanges> GetExchangeByMarketName(string marketName)
         {
             try
             {
-                return await _context.MarketCryptoExchangeCollection().Find(_ => _.MarketName == marketName)
+                return await _context.MarketExchangesCollection().Find(_ => _.MarketName == marketName)
                     .FirstOrDefaultAsync();
             }
             catch (Exception e)

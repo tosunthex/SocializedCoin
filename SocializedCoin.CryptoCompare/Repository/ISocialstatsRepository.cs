@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using CryptoCompare_Api.Models.Responses.Other;
 
-namespace SocilizedCoin.CryptoCompare.Repository
+namespace SocializedCoin.CryptoCompare.Repository
 {
     public interface ISocialstatsRepository
     {

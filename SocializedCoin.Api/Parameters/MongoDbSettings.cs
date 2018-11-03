@@ -4,5 +4,6 @@
     {
         public static string ConnectionString => "mongodb://admin:abc123!@localhost";
         public static string CoinmarketcapDatabase => "CoinMarketCap";
+        public static string CryptoCompareDatabase => "CryptoCompare";
     }
 }

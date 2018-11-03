@@ -4,7 +4,7 @@ using SocializedCoin.Api.Model;
 
 namespace SocializedCoin.Api.Repository
 {
-    public interface ILatestWithGeneralDataReposity
+    public interface ILatestWithGeneralDataRepository
     {
         Task<IEnumerable<LatestWithGeneralData>> Get();
         Task<LatestWithGeneralData> GetBySymbol(string symbol);

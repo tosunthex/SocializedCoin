@@ -1,4 +1,4 @@
-﻿namespace SocilizedCoin.CryptoCompare.Parameters
+﻿namespace SocializedCoin.CryptoCompare.Parameters
 {
     public class MongoDbSettings
     {

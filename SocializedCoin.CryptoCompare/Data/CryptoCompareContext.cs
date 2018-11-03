@@ -1,10 +1,10 @@
 ﻿using CryptoCompare_Api.Models.Responses.Other;
 using MongoDB.Driver;
-using SocilizedCoin.CryptoCompare.Model;
-using SocilizedCoin.CryptoCompare.Parameters;
-using CoinlistData = SocilizedCoin.CryptoCompare.Model.CoinlistData;
+using SocializedCoin.CryptoCompare.Model;
+using SocializedCoin.CryptoCompare.Parameters;
+using CoinlistData = SocializedCoin.CryptoCompare.Model.CoinlistData;
 
-namespace SocilizedCoin.CryptoCompare.Data
+namespace SocializedCoin.CryptoCompare.Data
 {
     public class CryptoCompareContext
     {
@@ -21,6 +21,6 @@ namespace SocilizedCoin.CryptoCompare.Data
 
         public IMongoCollection<SocialstatData> SocialStatCollection() => _dataBase.GetCollection<SocialstatData>("SocialstatData");
         public IMongoCollection<CoinlistData> CoinlistCollection() => _dataBase.GetCollection<CoinlistData>("CoinListData");
-        public IMongoCollection<MarketCryptoExchanges> MarketCryptoExchangeCollection() => _dataBase.GetCollection<MarketCryptoExchanges>("MarketCryptoExchanges");
+        public IMongoCollection<MarketExchanges> MarketExchangesCollection() => _dataBase.GetCollection<MarketExchanges>("MarketExchanges");
     }
 }

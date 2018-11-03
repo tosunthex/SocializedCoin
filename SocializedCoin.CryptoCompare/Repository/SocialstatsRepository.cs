@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using CryptoCompare_Api.Models.Responses.Other;
 using MongoDB.Driver;
-using SocilizedCoin.CryptoCompare.Data;
+using SocializedCoin.CryptoCompare.Data;
 
-namespace SocilizedCoin.CryptoCompare.Repository
+namespace SocializedCoin.CryptoCompare.Repository
 {
     public class SocialstatsRepository:ISocialstatsRepository
     {
