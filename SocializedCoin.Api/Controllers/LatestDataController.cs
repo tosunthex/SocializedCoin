@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using CoinMarketCapPro_API.Models.Responses;
+using CoinMarketCapPro_API.Models.Responses.CryptoCurrency;
 using Microsoft.AspNetCore.Mvc;
 using SocializedCoin.Api.Model;
 using SocializedCoin.Api.Repository;
@@ -17,7 +19,7 @@ namespace SocializedCoin.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<LatestData>> Get()
+        public async Task<ResponseMain<ListingLatestData[]>> Get()
         {
             return await _repository.Get();
         }
@@ -32,6 +34,18 @@ namespace SocializedCoin.Api.Controllers
         public async Task<LatestData> GetBySymbol(string symbol)
         {
             return await _repository.GetBySymbol(symbol);
+        }
+
+        [HttpGet("topgainers")]
+        public async Task<IEnumerable<TopCryptos>> GetTopGainers()
+        {
+            return await _repository.GetTopGainers();
+        }
+
+        [HttpGet("toplosers")]
+        public async Task<IEnumerable<TopCryptos>> GetTopLosers()
+        {
+            return await _repository.GetTopLosers();
         }
     }
 }
