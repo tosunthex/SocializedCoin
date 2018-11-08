@@ -6,7 +6,7 @@
         <Folder Include="wwwroot\"/>
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="CoinMarketCapProApi" Version="1.4.0"/>
+        <PackageReference Include="CoinMarketCapProApi" Version="1.4.1"/>
         <PackageReference Include="CryptoCompareAsyncApi" Version="1.2.4"/>
         <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5"/>
         <PackageReference Include="MongoDB.Driver" Version="2.7.0"/>

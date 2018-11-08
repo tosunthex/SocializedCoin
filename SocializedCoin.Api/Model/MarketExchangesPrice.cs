@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using CryptoCompare_Api.Models.Responses.Price;
 

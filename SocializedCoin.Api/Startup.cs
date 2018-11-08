@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens.Saml;
 using SocializedCoin.Api.Repository;
 
 namespace SocializedCoin.Api
@@ -26,6 +25,7 @@ namespace SocializedCoin.Api
             services.AddSingleton<IGeneralDataRepository, GeneralDataRepository>();
             services.AddSingleton<ILatestWithGeneralDataRepository, LatestWithGeneralDataRepository>();
             services.AddSingleton<IMarketExchangeRepository, MarketExchangeRepository>();
+            services.AddSingleton<IGlobalMetricsRepository, GlobalMetricsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
