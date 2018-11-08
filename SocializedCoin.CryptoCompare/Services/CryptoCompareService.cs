@@ -28,7 +28,7 @@ namespace SocializedCoin.CryptoCompare.Services
                 {
                     var dateTime = DateTime.Now;
                     var marketList = await _client.OtherClient.GetAllExchanges();
-                    var importantMarkets = new[] {"Binance", "Bitfinex","Cexio","Coinbase"};
+                    var importantMarkets = new[] {"Binance", "Bitfinex","Poloniex","Coinbase"};
                     foreach (var market in marketList)
                     {
                         if (!importantMarkets.Contains(market.Key)) continue;
