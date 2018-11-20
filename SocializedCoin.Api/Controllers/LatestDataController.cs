@@ -1,12 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using CoinMarketCapPro_API.Models.Responses;
-using CoinMarketCapPro_API.Models.Responses.CryptoCurrency;
+﻿using System.Threading.Tasks;
 using CryptoCompare_Api.Models.Responses.Price;
 using Microsoft.AspNetCore.Mvc;
-using SocializedCoin.Api.Model;
 using SocializedCoin.Api.Repository;
+using SocializedCoin.Core.Interfaces;
 
 namespace SocializedCoin.Api.Controllers
 {

@@ -1,4 +1,4 @@
-namespace SocializedCoin.Api.Model
+namespace SocializedCoin.Core.Entities
 {
     public class MarketVolume
     {

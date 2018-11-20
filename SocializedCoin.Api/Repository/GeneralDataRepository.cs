@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using SocializedCoin.Api.Data;
-using SocializedCoin.Api.Model;
+using SocializedCoin.Core.Entities;
+using SocializedCoin.Core.Interfaces;
 
 namespace SocializedCoin.Api.Repository
 {

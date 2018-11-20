@@ -1,7 +1,6 @@
-﻿using CoinMarketCapPro_API.Models.Responses.CryptoCurrency;
-using MongoDB.Driver;
-using SocializedCoin.Api.Model;
+﻿using MongoDB.Driver;
 using SocializedCoin.Api.Parameters;
+using SocializedCoin.Core.Entities;
 
 namespace SocializedCoin.Api.Data
 {

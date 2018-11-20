@@ -1,6 +1,6 @@
 using System;
 
-namespace SocializedCoin.Api.Model
+namespace SocializedCoin.Core.Entities
 {
     public class CryptoList
     {

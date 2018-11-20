@@ -3,9 +3,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using CoinMarketCapPro_API.Clients;
 using CoinMarketCapPro_API.Parameters;
-using SocializedCoin.Api.Model;
 using SocializedCoin.Api.Parameters;
 using SocializedCoin.Api.Services;
+using SocializedCoin.Core.Entities;
+using SocializedCoin.Core.Interfaces;
 
 namespace SocializedCoin.Api.Repository
 {

@@ -3,7 +3,7 @@ using CoinMarketCapPro_API.Models.Responses.CryptoCurrency;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace SocializedCoin.Api.Model
+namespace SocializedCoin.Core.Entities
 {
     public class GeneralData
     {

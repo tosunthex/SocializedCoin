@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using CryptoCompare_Api.Models.Responses.Price;
 
-namespace SocializedCoin.Api.Model
+namespace SocializedCoin.Core.Entities
 {
     public class MarketExchangesPrice
     {

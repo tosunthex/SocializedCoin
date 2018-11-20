@@ -4,6 +4,7 @@ using CoinMarketCapPro_API.Clients;
 using CoinMarketCapPro_API.Models.Responses;
 using CoinMarketCapPro_API.Parameters;
 using SocializedCoin.Api.Parameters;
+using SocializedCoin.Core.Interfaces;
 
 namespace SocializedCoin.Api.Repository
 {

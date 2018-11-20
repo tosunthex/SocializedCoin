@@ -17,4 +17,7 @@
             <HintPath>..\..\..\.nuget\packages\mongodb.driver\2.7.0\lib\netstandard1.5\MongoDB.Driver.dll</HintPath>
         </Reference>
     </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\SocializedCoin.Core\SocializedCoin.Core.csproj"/>
+    </ItemGroup>
 </Project>

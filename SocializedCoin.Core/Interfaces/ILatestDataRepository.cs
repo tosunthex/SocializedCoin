@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 using CoinMarketCapPro_API.Models.Responses;
 using CoinMarketCapPro_API.Models.Responses.CryptoCurrency;
 using CryptoCompare_Api.Models.Responses.Price;
-using SocializedCoin.Api.Model;
+using SocializedCoin.Core.Entities;
 
-namespace SocializedCoin.Api.Repository
+namespace SocializedCoin.Core.Interfaces
 {
     public interface ILatestDataRepository
     {

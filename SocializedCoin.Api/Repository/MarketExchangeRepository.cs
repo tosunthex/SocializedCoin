@@ -4,7 +4,8 @@ using CryptoCompare_Api.Clients;
 using CryptoCompare_Api.Models.Responses.Price;
 using MongoDB.Driver;
 using SocializedCoin.Api.Data;
-using SocializedCoin.Api.Model;
+using SocializedCoin.Core.Entities;
+using SocializedCoin.Core.Interfaces;
 
 namespace SocializedCoin.Api.Repository
 {

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using SocializedCoin.Api.Model;
+using SocializedCoin.Core.Entities;
 
-namespace SocializedCoin.Api.Repository
+namespace SocializedCoin.Core.Interfaces
 {
     public interface IMarketExchangeRepository
     {

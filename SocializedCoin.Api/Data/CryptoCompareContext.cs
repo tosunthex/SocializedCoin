@@ -1,6 +1,6 @@
 using MongoDB.Driver;
-using SocializedCoin.Api.Model;
 using SocializedCoin.Api.Parameters;
+using SocializedCoin.Core.Entities;
 
 namespace SocializedCoin.Api.Data
 {
