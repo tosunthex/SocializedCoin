@@ -1,88 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 using CoinMarketCapPro_API.Clients;
 using CoinMarketCapPro_API.Models.Responses;
 using CoinMarketCapPro_API.Models.Responses.CryptoCurrency;
-using CoinMarketCapPro_API.Parameters;
+using CryptoCompare_Api.Clients;
+using CryptoCompare_Api.Models.Responses.Price;
 using MongoDB.Driver;
 using SocializedCoin.Api.Data;
 using SocializedCoin.Api.Model;
 using SocializedCoin.Api.Parameters;
-using SortDirection = MongoDB.Driver.SortDirection;
 
 namespace SocializedCoin.Api.Repository
 {
     public class LatestDataRepository : ILatestDataRepository
     {
         private readonly CoinMarketCapContext _context = null;
-        private readonly ICoinMarketCapClient _client;
-
+        private readonly ICoinMarketCapClient _coinMarketCapClient;
+        private readonly ICryptoCompareClient _cryptoCompareClient;
         public LatestDataRepository()
         {
+            _cryptoCompareClient = new CryptoCompareClient(new HttpClientHandler());
             _context = new CoinMarketCapContext();
-            _client = CoinMarketCapConnection.Create();
+            _coinMarketCapClient = CoinMarketCapConnection.Create();
         }
 
-        public async Task<ResponseMain<ListingLatestData[]>> Get()
+        public async Task<ResponseMain<Dictionary<string, CryptoCurrencyInfoData>>> GetBySymbol(string symbol)
         {
-            try
-            {
-                return await _client.CryptoCurrencyClient.GetListingLatest(1, 100, new[] {Currency.Usd},
-                    SortField.MarketCap, "desc", "");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
+            return await _coinMarketCapClient.CryptoCurrencyClient.GetMetaData(new[] {symbol});
         }
 
-        public async Task<LatestData> GetBySymbol(string symbol)
+        public async Task<LatestCryptoCurrencyData> GetBySymbolFromDatabase(string symbol)
         {
             return await _context.GetLatestCryptoCurrencyData().Find(_ => _.ListingLatestData.Symbol == symbol)
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<LatestData> GetById(long id)
+        public async Task<MultipleSymbolFullData> GetBySymbolAndMarketFromCryptoCompare(string fromSymbol,string toSymbol,string market)
         {
-            return await _context.GetLatestCryptoCurrencyData().Find(_ => _.ListingLatestData.Id == id)
-                .FirstOrDefaultAsync();
-        }
-
-        public async Task<IEnumerable<TopCryptos>> GetTopGainers()
-        {
-            var response = await _client.CryptoCurrencyClient.GetListingLatest(1, 100, new[] {Currency.Usd},
-                SortField.Volume24H, "desc", "");
-            return (from r in response.Data
-                where r.Quote["USD"].Volume24H >= 50000
-                select new TopCryptos
-                {
-                    Symbol = r.Symbol,
-                    Percent = r.Quote["USD"].PercentChange24H,
-                    Price = r.Quote["USD"].Price
-                }).Take(5);
-        }
-
-        public async Task<IEnumerable<TopCryptos>> GetTopLosers()
-        {
-            var response = await _client.CryptoCurrencyClient.GetListingLatest(1, 100, new[] {Currency.Usd},
-                SortField.PercentChange24H, CoinMarketCapPro_API.Parameters.SortDirection.Asc,CryptoCurrencyType.All);
-            
-            return (from r in response.Data
-                where r.Quote["USD"].Volume24H >= 50000
-                select new TopCryptos
-                {
-                    Symbol = r.Symbol,
-                    Percent = r.Quote["USD"].PercentChange24H,
-                    Price = r.Quote["USD"].Price
-                }).Take(5);
-        }
-
-        public Task<MarketVolume> GetMarketVolume()
-        {
-            throw new NotImplementedException();
+            return await _cryptoCompareClient.PriceClient.GetMultipleSymbolFullData(new[] {fromSymbol}, new[] {toSymbol},
+                false, market);
         }
     }
 }

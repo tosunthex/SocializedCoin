@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using CoinMarketCapPro;
 using CoinMarketCapPro_API.Models.Responses;
@@ -6,6 +7,8 @@ using SocializedCoin.Api.Repository;
 
 namespace SocializedCoin.Api.Controllers
 {
+    [Route("api/v1/[controller]")]
+    [ApiController]
     public class GlobalMetricsController : Controller
     {
         private readonly IGlobalMetricsRepository _repository;
@@ -14,9 +17,15 @@ namespace SocializedCoin.Api.Controllers
             _repository = repository;
         }
         [HttpGet]
-        public async Task<ResponseMain<GlobalMetricsLatestData>> GetGlobalMetrics()
+        public async Task<ServiceResponse<ResponseMain<GlobalMetricsLatestData>>> GetGlobalMetrics()
         {
-            return await _repository.GetGlobalMetrics();
+            var response = new ServiceResponse<ResponseMain<GlobalMetricsLatestData>>(HttpContext)
+            {
+                Entity = await _repository.GetGlobalMetrics(),
+                IsSuccessful = true
+            };
+            
+            return response;
         }
         
     }

@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using CoinMarketCapPro_API.Models.Responses.CryptoCurrency;
+using MongoDB.Driver;
 using SocializedCoin.Api.Model;
 using SocializedCoin.Api.Parameters;
 
@@ -13,8 +14,7 @@ namespace SocializedCoin.Api.Data
             _database = client.GetDatabase(MongoDbSettings.CoinmarketcapDatabase);
         }
 
-        public IMongoCollection<LatestData> GetLatestCryptoCurrencyData() =>
-            _database.GetCollection<LatestData>("LatestCryptoCurrencyData");
+        public IMongoCollection<LatestCryptoCurrencyData> GetLatestCryptoCurrencyData() => _database.GetCollection<LatestCryptoCurrencyData>("LatestCryptoCurrencyData");
         public IMongoCollection<GeneralData> GetCryptoCurrencyGeneralData() =>
             _database.GetCollection<GeneralData>("CryptoCurrencyGeneralData");
     }

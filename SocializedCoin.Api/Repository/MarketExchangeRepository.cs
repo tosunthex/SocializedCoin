@@ -38,7 +38,7 @@ namespace SocializedCoin.Api.Repository
                 {
                     var fromCrypto = symbol;
                     var exchangePrice = await 
-                        _client.PriceClient.GetMultipleSymbolFullData(new string[]{fromCrypto}, new string[]{toCrypto}, false, marketName);
+                        _client.PriceClient.GetMultipleSymbolFullData(new []{fromCrypto}, new []{toCrypto}, false, marketName);
                     marketExchangePrice.MultipleSymbolFullData.Add(toCrypto,exchangePrice.Display[fromCrypto][toCrypto]);
                 }
                 result.Add(marketExchangePrice);

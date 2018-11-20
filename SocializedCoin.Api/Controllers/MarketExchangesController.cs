@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SocializedCoin.Api.Model;
@@ -18,9 +19,15 @@ namespace SocializedCoin.Api.Controllers
         }
 
         [HttpGet("{symbol:alpha}")]
-        public async Task<IEnumerable<MarketExchangesPrice>> GetPriceBySymbol(string symbol)
+        public async Task<ServiceResponse<MarketExchangesPrice>> GetPriceBySymbol(string symbol)
         {
-            return await _repository.GetMarketLatestDataBySymbol(symbol);
+            var response = new ServiceResponse<MarketExchangesPrice>(HttpContext)
+            {
+                Data = await _repository.GetMarketLatestDataBySymbol(symbol),
+                IsSuccessful = true
+            };
+            response.Count = response.Data.Count();
+            return response;
         }
     }
 }

@@ -6,10 +6,11 @@
         <Folder Include="wwwroot\"/>
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="CoinMarketCapProApi" Version="1.4.1"/>
+        <PackageReference Include="CoinMarketCapProApi" Version="1.4.2"/>
         <PackageReference Include="CryptoCompareAsyncApi" Version="1.2.4"/>
         <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5"/>
         <PackageReference Include="MongoDB.Driver" Version="2.7.0"/>
+        <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.9"/>
     </ItemGroup>
     <ItemGroup>
         <Reference Include="MongoDB.Driver, Version=2.7.0.0, Culture=neutral, PublicKeyToken=null">

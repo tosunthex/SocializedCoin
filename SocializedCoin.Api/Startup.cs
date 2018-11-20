@@ -21,11 +21,13 @@ namespace SocializedCoin.Api
         {
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSingleton<ILatestDataRepository, LatestDataRepository>();
-            services.AddSingleton<IGeneralDataRepository, GeneralDataRepository>();
-            services.AddSingleton<ILatestWithGeneralDataRepository, LatestWithGeneralDataRepository>();
-            services.AddSingleton<IMarketExchangeRepository, MarketExchangeRepository>();
-            services.AddSingleton<IGlobalMetricsRepository, GlobalMetricsRepository>();
+            services.AddScoped<ILatestDataRepository, LatestDataRepository>();
+            services.AddScoped<IGeneralDataRepository, GeneralDataRepository>();
+            services.AddScoped<IMarketExchangeRepository, MarketExchangeRepository>();
+            services.AddScoped<IGlobalMetricsRepository, GlobalMetricsRepository>();
+            services.AddScoped<ICryptoListRepository, CryptoListRepository>();
+            services.AddScoped<ITopCryptoRepository, TopCryptoRepository>();
+            services.AddScoped<IDashboardListRepository, DashboardListRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
