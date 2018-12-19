@@ -1,6 +1,6 @@
 ﻿namespace SocializedCoin.Core.Entities
 {
-    public class DashboardList
+    public class DashboardList:BaseEntity
     {
         public DashboardListValues Values { get; set; }
         public DashBoardListDisplay Display { get; set; }

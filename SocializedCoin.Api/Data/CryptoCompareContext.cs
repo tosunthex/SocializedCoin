@@ -11,7 +11,7 @@ namespace SocializedCoin.Api.Data
         public CryptoCompareContext()
         {
             var client = new MongoClient(MongoDbSettings.ConnectionString);
-            _database = client.GetDatabase(MongoDbSettings.CryptoCompareDatabase);
+            _database = client.GetDatabase(Infrastructure.Settings.MongoDbSettings.SocializedCoinDatabase);
         }
 
         public IMongoCollection<MarketExchanges> GetMarketExchangeCollection =>

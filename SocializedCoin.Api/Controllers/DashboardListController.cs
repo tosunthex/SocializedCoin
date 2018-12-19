@@ -1,7 +1,6 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using SocializedCoin.Api.Repository;
 using SocializedCoin.Core.Entities;
 using SocializedCoin.Core.Interfaces;
 

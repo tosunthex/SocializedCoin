@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using CoinMarketCapPro_API.Clients;
 using CoinMarketCapPro_API.Parameters;
 using Microsoft.Extensions.Hosting;
+using SocializedCoin.Core.Entities;
 using SocilizedCoin.CoinMarketCap.Model;
 using SocilizedCoin.CoinMarketCap.Repository;
 
-namespace SocilizedCoin.CoinMarketCap.Services
+namespace SocializedCoin.CoinMarketCap.Services
 {
     public class CoinMarketCapService:BackgroundService
     {
@@ -33,7 +34,7 @@ namespace SocilizedCoin.CoinMarketCap.Services
                 {
                     cryptoIds.Add(listElement.Id.ToString());
                     
-                    var mongoTicker = new LatestCryptoCurrencyData
+                    var mongoTicker = new CoinMarketCapLatestData
                     {
                         ListingLatestData = listElement,
                         RecordDateTime = dateTime

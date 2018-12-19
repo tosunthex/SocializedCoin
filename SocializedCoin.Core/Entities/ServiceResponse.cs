@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
-namespace SocializedCoin.Api.Repository
+namespace SocializedCoin.Core.Entities
 {
     [Serializable]
     public class ServiceResponse<T>

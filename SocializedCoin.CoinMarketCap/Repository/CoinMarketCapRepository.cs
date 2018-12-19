@@ -2,10 +2,12 @@
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using SocializedCoin.Core.Entities;
 using SocilizedCoin.CoinMarketCap.Data;
 using SocilizedCoin.CoinMarketCap.Model;
+using SocilizedCoin.CoinMarketCap.Repository;
 
-namespace SocilizedCoin.CoinMarketCap.Repository
+namespace SocializedCoin.CoinMarketCap.Repository
 {
     public class CoinMarketCapRepository:ICoinMarketCapRepository
     {
@@ -16,7 +18,7 @@ namespace SocilizedCoin.CoinMarketCap.Repository
             _context = new CoinMarketCapContext();
         }
         
-        public async Task<LatestCryptoCurrencyData> GetTicker()
+        public async Task<CoinMarketCapLatestData> GetTicker()
         {
             try
             {
@@ -29,7 +31,7 @@ namespace SocilizedCoin.CoinMarketCap.Repository
             }
         }
 
-        public async Task AddTicker(LatestCryptoCurrencyData ticker)
+        public async Task AddTicker(CoinMarketCapLatestData ticker)
         {
             try
             {
@@ -46,7 +48,7 @@ namespace SocilizedCoin.CoinMarketCap.Repository
         {
             try
             {
-                DeleteResult actionResult =  await _context.LastestCrpytoCurrencyData().DeleteOneAsync(Builders<LatestCryptoCurrencyData>.Filter.Eq("Id",id));
+                DeleteResult actionResult =  await _context.LastestCrpytoCurrencyData().DeleteOneAsync(Builders<CoinMarketCapLatestData>.Filter.Eq("Id",id));
                 return actionResult.IsAcknowledged 
                        && actionResult.DeletedCount > 0;
             }

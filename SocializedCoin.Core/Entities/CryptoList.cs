@@ -2,7 +2,7 @@ using System;
 
 namespace SocializedCoin.Core.Entities
 {
-    public class CryptoList
+    public class CryptoList:BaseEntity
     {
         public string Name { get; set; }
         public string Symbol { get; set; }

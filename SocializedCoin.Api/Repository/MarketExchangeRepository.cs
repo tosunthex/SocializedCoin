@@ -6,25 +6,31 @@ using MongoDB.Driver;
 using SocializedCoin.Api.Data;
 using SocializedCoin.Core.Entities;
 using SocializedCoin.Core.Interfaces;
+using SocializedCoin.Core.Specifications;
+using SocializedCoin.Infrastructure.Data;
 
 namespace SocializedCoin.Api.Repository
 {
     public class MarketExchangeRepository:IMarketExchangeRepository
     {
         private readonly CryptoCompareContext _cryptoCompareContext = null;
+        private readonly IAsyncRepository<MarketExchanges> _marketExchangesRepository;
         private readonly CryptoCompareClient _client;
         public MarketExchangeRepository()
         {
             _cryptoCompareContext = new CryptoCompareContext();
             _client = new CryptoCompareClient();
+            _marketExchangesRepository = new MongoRepository<MarketExchanges>();
         }
         
         public async Task<IEnumerable<MarketExchangesPrice>> GetMarketLatestDataBySymbol(string symbol)
         {
             var exchanges = await _cryptoCompareContext.GetMarketExchangeCollection
-                .Find(Builders<MarketExchanges>.Filter.Exists("CryptoExchanges." + symbol, true)).Project(ex =>
-                    new {ex.MarketName, CryptoExchange = ex.CryptoExchanges[symbol]})
+                .Find(Builders<MarketExchanges>.Filter.Exists("CryptoExchanges." + symbol, true))
+                .Project(ex => new {ex.MarketName, CryptoExchange = ex.CryptoExchanges[symbol]})
                 .Sort(Builders<MarketExchanges>.Sort.Ascending("MarketName")).ToListAsync();
+            var m = new MarketExchangesFilterSpecification(symbol);
+            var a = await _marketExchangesRepository.GetBySpecAsync(m);
             
             var result = new List<MarketExchangesPrice>();
             foreach (var item in exchanges)

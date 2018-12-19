@@ -9,7 +9,7 @@
         <PackageReference Include="CoinMarketCapProApi" Version="1.4.2"/>
         <PackageReference Include="CryptoCompareAsyncApi" Version="1.2.4"/>
         <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5"/>
-        <PackageReference Include="MongoDB.Driver" Version="2.7.0"/>
+        <PackageReference Include="MongoDB.Driver" Version="2.7.2"/>
         <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.9"/>
     </ItemGroup>
     <ItemGroup>
@@ -19,5 +19,6 @@
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\SocializedCoin.Core\SocializedCoin.Core.csproj"/>
+        <ProjectReference Include="..\SocializedCoin.Infrastructure\SocializedCoin.Infrastructure.csproj"/>
     </ItemGroup>
 </Project>

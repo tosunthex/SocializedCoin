@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SocializedCoin.CoinMarketCap.Repository;
+using SocializedCoin.CoinMarketCap.Services;
 using SocilizedCoin.CoinMarketCap.Repository;
-using SocilizedCoin.CoinMarketCap.Services;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace SocilizedCoin.CoinMarketCap

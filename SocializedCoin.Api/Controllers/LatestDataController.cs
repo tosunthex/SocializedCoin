@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using CryptoCompare_Api.Models.Responses.Price;
 using Microsoft.AspNetCore.Mvc;
-using SocializedCoin.Api.Repository;
+using SocializedCoin.Core.Entities;
 using SocializedCoin.Core.Interfaces;
 
 namespace SocializedCoin.Api.Controllers

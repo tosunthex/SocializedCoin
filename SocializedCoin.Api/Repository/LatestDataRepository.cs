@@ -31,7 +31,7 @@ namespace SocializedCoin.Api.Repository
             return await _coinMarketCapClient.CryptoCurrencyClient.GetMetaData(new[] {symbol});
         }
 
-        public async Task<LatestCryptoCurrencyData> GetBySymbolFromDatabase(string symbol)
+        public async Task<CoinMarketCapLatestData> GetBySymbolFromDatabase(string symbol)
         {
             return await _context.GetLatestCryptoCurrencyData().Find(_ => _.ListingLatestData.Symbol == symbol)
                 .FirstOrDefaultAsync();

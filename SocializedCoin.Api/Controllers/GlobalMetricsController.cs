@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using CoinMarketCapPro;
 using CoinMarketCapPro_API.Models.Responses;
 using Microsoft.AspNetCore.Mvc;
-using SocializedCoin.Api.Repository;
+using SocializedCoin.Core.Entities;
 using SocializedCoin.Core.Interfaces;
 
 namespace SocializedCoin.Api.Controllers

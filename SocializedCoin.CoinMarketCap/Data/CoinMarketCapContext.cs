@@ -1,4 +1,5 @@
 ﻿using MongoDB.Driver;
+using SocializedCoin.Core.Entities;
 using SocilizedCoin.CoinMarketCap.Model;
 using SocilizedCoin.CoinMarketCap.Parameters;
 
@@ -17,7 +18,7 @@ namespace SocilizedCoin.CoinMarketCap.Data
             }
         }
 
-        public IMongoCollection<LatestCryptoCurrencyData> LastestCrpytoCurrencyData() => _database.GetCollection<LatestCryptoCurrencyData>("LatestCryptoCurrencyData");
+        public IMongoCollection<CoinMarketCapLatestData> LastestCrpytoCurrencyData() => _database.GetCollection<CoinMarketCapLatestData>("LatestCryptoCurrencyData");
         public IMongoCollection<CryptoCurrencyGeneralData> CryptoCurrencyGeneralData() => _database.GetCollection<CryptoCurrencyGeneralData>("CryptoCurrencyGeneralData");
     }
 }

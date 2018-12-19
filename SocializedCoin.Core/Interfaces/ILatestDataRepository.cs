@@ -10,7 +10,7 @@ namespace SocializedCoin.Core.Interfaces
     public interface ILatestDataRepository
     {
         Task<ResponseMain<Dictionary<string, CryptoCurrencyInfoData>>> GetBySymbol(string symbol);
-        Task<LatestCryptoCurrencyData> GetBySymbolFromDatabase(string symbol);
+        Task<CoinMarketCapLatestData> GetBySymbolFromDatabase(string symbol);
         Task<MultipleSymbolFullData> GetBySymbolAndMarketFromCryptoCompare(string fromSymbol,string toSymbol,string market);
     }
 }

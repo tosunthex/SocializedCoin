@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SocializedCoin.Api.Repository;
 using SocializedCoin.Core.Interfaces;
+using SocializedCoin.Infrastructure.Data;
 
 namespace SocializedCoin.Api
 {
@@ -22,8 +23,8 @@ namespace SocializedCoin.Api
         {
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddScoped(typeof(IAsyncRepository<>),typeof(MongoRepository<>));
             services.AddScoped<ILatestDataRepository, LatestDataRepository>();
-            services.AddScoped<IGeneralDataRepository, GeneralDataRepository>();
             services.AddScoped<IMarketExchangeRepository, MarketExchangeRepository>();
             services.AddScoped<IGlobalMetricsRepository, GlobalMetricsRepository>();
             services.AddScoped<ICryptoListRepository, CryptoListRepository>();
